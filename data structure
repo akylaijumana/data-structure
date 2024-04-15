@@ -1,0 +1,30 @@
+#include<iostream> 
+#include<string>
+using namespace std; 
+ 
+struct Date { 
+    int days; 
+    int months; 
+    int years; 
+}; 
+int main() { 
+    string monthNames[12] = {"January","February","March","April","May","June","July","August","September","October","November","December"}; 
+    Date date1; 
+    cout << "Enter the day: "; 
+    cin >> date1.days; 
+    while (date1.days > 31) { 
+        cout << "Enter the day: "; 
+        cin >> date1.days; 
+    }
+    cout << "Enter the month: "; 
+    cin >> date1.months; 
+    while (date1.months > 12) {         
+        cout << "Enter the month: "; 
+        cin >> date1.months; 
+    } 
+    cout << "Enter the year: "; 
+    cin >> date1.years; 
+    cout << monthNames[date1.months - 1] << " " << date1.days << ", " << date1.years << endl; 
+     
+    return 0; 
+}
